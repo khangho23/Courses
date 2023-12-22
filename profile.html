@@ -1,0 +1,164 @@
+
+<style>
+        /* Chỉnh phần input chọn ảnh */
+        .container input[type="file"] {
+            display: none;
+        }
+
+        .custom-upload {
+            border: 1px solid lightgray;
+            color: #FFF;
+            padding: 5px;
+            box-shadow: 1px 1px #ddd;
+            border-radius: 4px;
+        }
+    </style>
+<div class="container">
+    <div class="card m-auto mt-3 border-light">
+        <div class="card-header bg-primary text-light">
+            <h4 class="card-title fw-bold">My Profile</h4>
+            <label>Manage and protect your account</label>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-8 text-end">
+                    <form name="frmEdit">
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-3 m-auto">
+                                    <label class="form-label m-auto">Tài khoản</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control"
+                                        id="username"
+                                        ng-model="student.username" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-3 m-auto">
+                                    <label class="form-label m-auto">Tên</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control"
+                                        id="name" ng-model="student.fullname">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-3 m-auto">
+                                    <label class="form-label m-auto">Email</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="email" class="form-control"
+                                        id="email" ng-model="student.email">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-3 m-auto">
+                                    <label class="form-label m-auto">Học phí</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="tel" class="form-control"
+                                        id="schoolfee"
+                                        ng-model="student.schoolfee">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-3">
+                                    <label class="form-label">Giới tính</label>
+                                </div>
+
+                                <div class="col-9 text-start">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                            type="radio" name="gender"
+                                            id="gender1" value="true"
+                                            ng-model="student.gender"
+                                            checked>
+                                        <label class="form-check-label">
+                                            Nam
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                            type="radio" name="gender"
+                                            id="gender2" value="false"
+                                            ng-model="student.gender">
+                                        <label class="form-check-label">
+                                            Nữ
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="row">
+                                    <div class="col-3 m-auto">
+                                        <label class="form-label m-auto">Ngày
+                                            sinh</label>
+                                    </div>
+
+                                    <div class="col-9 text-start">
+                                        <input class="form-control" type="date"
+                                            id="birthday"
+                                            ng-model="student.birthday"
+                                            disabled>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="offset-3 text-start mb-4">
+                                <button type="submit" class="btn btn-primary
+                                    px-4
+                                    py-2 text-light"
+                                    ng-click="changeMyProfile()"
+                                    ng-disabled="frmEdit.$pristine"><i
+                                        class="bi bi-download pe-2"></i> Lưu</button>
+                                <button type="submit" class="btn btn-primary
+                                    px-4
+                                    py-2 text-light" ng-click="hideStudent()"><i
+                                        class="bi bi-eye"></i> Hiển thị</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-4 text-center mt-3">
+                    <div class="mb-3">
+                        <!-- <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t39.30808-6/325333721_5105435359559630_3942761313049921347_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=bCoKys1Tax0AX8A8tyl&_nc_ht=scontent.fsgn3-1.fna&oh=00_AfAbXffx51ybW5ta_POTXDHcUNyHy3EBreF8PAaR6MYokg&oe=63DB6946"
+                                alt="" class="rounded-5" style="width: 85px;"> -->
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="custom-upload bg-primary">
+                            <span class="text-light p-3"><i class="bi
+                                    bi-card-image pe-3"></i>Chọn ảnh</span>
+                            <input type="file" id="upload"
+                                accept=".jpg,.jpeg,.png">
+                        </label>
+                    </div>
+
+                    <div>
+                        <label class="fw-lighter">File size: maximum 1 MB<br />
+                            File extension: .JPEG, .PNG</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

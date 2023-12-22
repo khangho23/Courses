@@ -1,0 +1,37 @@
+<div class="container">
+    <p class="text-center fs-4 fw-bold">{{dongho}}</p>
+    <div class="card mt-3 mb-3">
+
+        <div class="card-header bg-primary">
+            <h3 class="text-center text-light">{{tenMH}}</h3>
+        </div>
+
+        <div class="card-body">
+            <!-- Question -->
+            <div ng-repeat="q in ques | limitTo: 1 : start">
+                <div class="d-flex justify-content-end">
+                    <p class="badge text-bg-primary">{{start}}/{{ques.length}}</p>
+                </div>
+
+                <h6>{{q.Text}}</h6>
+                <p ng-repeat="pa in q.Answers">
+                    <input type="radio" name="{{q.Id}}" value="{{pa.Id}}" ng-click="countMarks(q.AnswerId, pa.Id)">
+                    {{pa.Text}}
+                </p>
+            </div>
+
+            <div class="card-footer float-end">
+                <button class="btn btn-primary" ng-click="start()">Nộp bài</button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="text-center mb-4">
+        <button ng-click="first()" type="button" class="btn btn-primary"><i class="fa-solid fa-backward-step"></i> Trang đầu</button>
+        <button ng-click="prev()" type="button" class="btn btn-primary"><i class="fa-solid fa-backward"></i></i> Trang trước</button>
+        <button ng-click="next()" type="button" class="btn btn-primary"><i class="fa-solid fa-forward"></i> Trang kế</button>
+        <button ng-click="last()" type="button" class="btn btn-primary"><i class="fa-solid fa-forward-step"></i> Trang cuối</button>
+    </div>
+</div>

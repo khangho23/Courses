@@ -1,0 +1,137 @@
+<style>
+    input.ng-invalid {
+        background-image: url("https://th.bing.com/th/id/R.a04874e1f265db7b91de3e87f1788d61?rik=5b0D0ZNDwa7Fyw&riu=http%3a%2f%2fwww.f-i-r-e-service.com%2fimages%2fanifire.gif&ehk=HcSicjMXyn5dcQVhJglvnQWvds361aUTf6mDJawKde0%3d&risl=&pid=ImgRaw&r=0");
+        background-size: contain;
+        background-position: center right;
+        background-repeat: no-repeat;
+    }
+</style>
+<div class="container">
+    <div class="card m-auto my-lg-5 border-light">
+        <div class="card-body">
+            <div class="d-flex justify-content-center mb-3 mt-3"><img
+                    src="https://seeklogo.com/images/F/fpt-logo-5B8F17203A-seeklogo.com.png"
+                    alt=""
+                    style="width: 100px;"></div>
+            <div class="card-title mb-5">
+                <h4 class="fw-bold text-center">Đăng ký tài khoản FPT
+                    Polytechnic</h4>
+            </div>
+            <form name="frmSignUp">
+                <div class="row">
+                    <div class="mb-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-person-vcard-fill"></i></span>
+                            <input type="text" class="form-control"
+                                id="fullname" name="fullname" placeholder="Nhập họ và tên"
+                                ng-model="student.fullname" ng-minlength="1" ng-maxlength="30" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-envelope-fill"></i></span>
+                            <input type="email" class="form-control"
+                                id="email" name="email" placeholder="Nhập email"
+                                ng-model="student.email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-person-fill"></i></span>
+                            <input type="text" class="form-control"
+                                id="username" placeholder="Nhập tài khoản"
+                                ng-model="student.username" ng-minlength="1" ng-maxlength="20" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-key-fill"></i></span>
+                            <input type="password" class="form-control"
+                                id="password" name="password" placeholder="Nhập mật khẩu"
+                                ng-minlength="3" ng-maxlength="30"
+                                ng-model="student.password" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-calendar"></i></span>
+                            <input type="date" class="form-control"
+                                id="birthday" placeholder="Nhập ngày sinh"
+                                ng-model="student.birthday" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi
+                                    bi-cash-coin"></i></span>
+                            <input type="number" class="form-control"
+                                id="schoolfee" placeholder="Nhập học phí"
+                                ng-model="student.schoolfee" ng-minlength="1" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-xs-4 col-sm-4 col-md-4 col-lg-4
+                        text-center m-auto">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="gender" id="gender1" value="true" checked>
+                            <label class="form-check-label">
+                                Nam
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="gender" id="gender2" value="false">
+                            <label class="form-check-label">
+                                Nữ
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input"
+                        id="checkRemember">
+                    <label class="form-check-label">Remember me</label>
+                </div> -->
+                <div class="d-flex justify-content-center mt-4"><button
+                        type="button"
+                        class="btn btn-info text-light fw-bold w-100"
+                        ng-disabled="frmSignUp.$invalid"
+                        ng-click="signUp()">Đăng ký</button></div>
+            </form>
+
+            <div class="text-center mt-4">
+                <p>Bạn đã có tài khoản? <a href="" class="fw-bold">Đăng nhập</a></p>
+            </div>
+
+            <!-- <div class="text-center mt-5">
+                <p class="badge">
+                    Việc bạn tiếp tục sử dụng trang web này đồng nghĩa bạn đồng
+                    ý với<br />
+                    <a href="#">Điều khoản sử dụng</a>
+                    của chúng tôi.
+                </p>
+            </div> -->
+        </div>
+    </div>
+
+    <div class="text-center">
+        <span>Giới thiệu về FPT | </span>
+        <span>FPT trên Youtube | </span>
+        <span>FPT trên Facebook</span>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+ <div class="container">
+    <!-- Subject -->
+    <div class="row d-flex justify-content-center">
+        <a href="#!test/{{s.Id}}/{{s.Name}}" class="card col-3 m-4 link-dark" ng-repeat="s in subjects | limitTo: 6 : start">
+            <img src="./images/logos/{{s.Logo}}" class="card-img-top w-50
+                m-auto"
+                alt="{{s.Id}}">
+            <div class="card-body text-center">
+                <p class="card-text">{{s.Name}}</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="text-center mb-4">
+        <button ng-click="first()" type="button" class="btn btn-primary"><i class="fa-solid fa-backward-step"></i> Trang đầu</button>
+        <button ng-click="prev()" type="button" class="btn btn-primary"><i class="fa-solid fa-backward"></i></i> Trang trước</button>
+        <button ng-click="next()" type="button" class="btn btn-primary"><i class="fa-solid fa-forward"></i> Trang kế</button>
+        <button ng-click="last()" type="button" class="btn btn-primary"><i class="fa-solid fa-forward-step"></i> Trang cuối</button>
+    </div>
+
+</div>
